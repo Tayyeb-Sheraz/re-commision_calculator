@@ -161,7 +161,7 @@ footer span { color: var(--blue); font-weight: 500; }
       <div class="field">
         <label>Commission rate</label>
         <div class="comm-box">
-          <input type="number" id="cpct" value="2" step="0.25" min="0.5" max="10" oninput="onCommInput(this)">
+          <input type="text" id="cpct" value="2" inputmode="decimal" oninput="onCommInput(this)" placeholder="2">
           <span class="comm-pct">%</span>
         </div>
         <div class="hint" id="commHint">Standard UAE rate: 2%</div>
