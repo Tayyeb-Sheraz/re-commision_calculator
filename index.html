@@ -169,6 +169,11 @@ footer span { color: var(--blue); font-weight: 500; }
     </div>
   </div>
 
+  <div style="padding:4px 2px 14px;">
+    <span id="poolAmt" style="font-family:'DM Mono',monospace;font-size:17px;font-weight:700;color:var(--text)"></span>
+    <span style="font-size:14px;color:var(--text-3);margin-left:6px;">is Total Commission Pool</span>
+  </div>
+
   <div class="warn" id="warn">Stage allocations do not total 100% — please review.</div>
   <div class="summary-grid" id="summaryGrid"></div>
   <div class="bar-row" id="barRow"></div>
@@ -247,6 +252,7 @@ function recalc() {
   const totalPct = stages.reduce((a,s)=>a+s.pct,0);
   document.getElementById('warn').style.display = totalPct!==100?'block':'none';
 
+  document.getElementById('poolAmt').textContent = fmt(pool);
   const earned={bh:0,ag:0,ad:0}, count={bh:0,ag:0,ad:0};
   stages.forEach((s,i)=>{ earned[assignments[i]]+=(s.pct/100)*pool; count[assignments[i]]++; });
 
