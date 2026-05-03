@@ -169,9 +169,9 @@ footer span { color: var(--blue); font-weight: 500; }
     </div>
   </div>
 
-  <div style="padding:4px 2px 14px;">
-    <span id="poolAmt" style="font-family:'DM Mono',monospace;font-size:17px;font-weight:700;color:var(--text)"></span>
-    <span style="font-size:14px;color:var(--text-3);margin-left:6px;">is Total Commission Pool</span>
+  <div style="padding:4px 0 14px 4px;">
+    <span id="poolAmt" style="font-family:'DM Mono',monospace;font-size:17px;font-weight:700;color:var(--text);letter-spacing:-0.3px"></span>
+    <span style="font-size:14px;color:var(--text-3);margin-left:5px;">is Total Commission Pool</span>
   </div>
 
   <div class="warn" id="warn">Stage allocations do not total 100% — please review.</div>
@@ -241,7 +241,7 @@ function onCommInput(el) {
 document.getElementById('priceDisplay').value = '2,000,000';
 document.getElementById('priceWords').textContent = 'AED 2 Million';
 
-const fmt = v => 'AED ' + Math.round(v).toLocaleString();
+const fmt = v => 'AED\u202F' + Math.round(v).toLocaleString();
 function getPool() {
   return parsePrice() * (parseFloat(document.getElementById('cpct').value)||2) / 100;
 }
